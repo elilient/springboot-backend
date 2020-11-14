@@ -16,14 +16,13 @@ public class VotingController {
     @Autowired
     private AnimalRepository animalRepository;
 
-    @GetMapping("voting")
+    /*@GetMapping("voting")
     public List<Animal> getResults() {
         return this.animalRepository.findAll();
-    }
+    }*/
 
     @PostMapping("voting")
     public Animal postVote(@RequestBody Animal data) {
         return animalRepository.save(data);
     }
-
 }
