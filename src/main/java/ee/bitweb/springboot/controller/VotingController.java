@@ -1,7 +1,9 @@
 package ee.bitweb.springboot.controller;
 
+import java.io.IOException;
 import java.util.List;
-
+import java.util.concurrent.TimeoutException;
+import ee.bitweb.springboot.Sender;
 import ee.bitweb.springboot.repository.AnimalRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -12,7 +14,6 @@ import ee.bitweb.springboot.model.Animal;
 @RestController
 @RequestMapping("api/")
 public class VotingController {
-
     @Autowired
     private AnimalRepository animalRepository;
 
@@ -22,7 +23,8 @@ public class VotingController {
     }
 
     @PostMapping("voting")
-    public Animal postVote(@RequestBody Animal data) {
+    public Animal postVote(@RequestBody Animal data) throws IOException, TimeoutException {
+        Sender.sendMessage(data.getType());
         return animalRepository.save(data);
     }
 

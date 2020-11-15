@@ -18,7 +18,7 @@ public class SpringbootBackendApplication implements CommandLineRunner {
     private AnimalRepository animalRepository;
 
     @Override
-    public void run(String... args) throws Exception {
+    public void run(String... args) {
         this.animalRepository.save(new Animal("dog"));
         this.animalRepository.save(new Animal("cat"));
         this.animalRepository.save(new Animal("cat"));
