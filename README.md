@@ -7,4 +7,4 @@ Maven
 ```mvn spring-boot:build-image```
 
 ## Docker
-```docker run --publish 8080:8080 docker.io/library/springboot-backend:0.0.1-SNAPSHOT```
+```docker build -t springboot-backend . && docker run -p 8080:8080 --name backend-container --network mynetwork springboot-backend```
