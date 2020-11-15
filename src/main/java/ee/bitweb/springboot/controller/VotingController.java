@@ -3,7 +3,6 @@ package ee.bitweb.springboot.controller;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeoutException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import ee.bitweb.springboot.Sender;
 import ee.bitweb.springboot.repository.AnimalRepository;
 import org.springframework.beans.factory.annotation.Autowired;
